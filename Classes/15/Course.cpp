@@ -1,0 +1,23 @@
+#include <iostream>
+#include "Course.h"
+using namespace std;
+
+void Course::DropStudent(string last) {
+   /* Type your code here */
+   for(int i =0; i < roster.size(); i++)
+   {
+       if(roster[i].GetLast() == last)
+       {
+           roster.erase(roster.begin() + i);
+           break;
+       }
+   }
+}
+
+void Course::AddStudent(Student s) {
+	roster.push_back(s);
+}
+
+int Course::CountStudents() {
+   return roster.size();
+}
